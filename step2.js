@@ -39,3 +39,10 @@ if (firstFourChars === 'http') {
 } else {
   cat();
 }
+
+// solution example with ternary
+// let path = process.argv[2];
+
+// let resultPromise = path.startsWith("http")
+//   ? webCat(path)
+//   : cat();
