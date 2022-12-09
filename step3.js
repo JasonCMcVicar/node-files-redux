@@ -79,10 +79,9 @@ async function director() {
     let path = argv[4];
     let writeTo = argv[3];
     returnPromise = path.startsWith("http")
-      ? webCat(path, writeTruth)
-      : cat(path, writeTruth);
-    let promiseResult = await Promise.all([returnPromise]);
-    catWriter(writeTo, promiseResult);
+      ? await webCat(path, writeTruth)
+      : await cat(path, writeTruth);
+    catWriter(writeTo, returnPromise);
   } else {
     let path = argv[2];
     path.startsWith("http")
